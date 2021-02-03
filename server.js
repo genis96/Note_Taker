@@ -10,10 +10,13 @@ app.use(express.urlencoded({extended: true}));
 app.use(express.json());
 app.use(express.static('public'));
 
-// let dataNotes = [];
+let dataNotes = [];
 
 // GET
-
+app.get('/api/notes', (req, res) => {
+    const files = fs.readFileSync(db, 'utf8');
+    res.json(JSON.parse(file));
+});
 
 // POST
 
