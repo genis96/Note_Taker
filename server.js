@@ -13,10 +13,16 @@ app.use(express.static('public'));
 
 let dataNotes = [];
 
-// GET
+// GET..
 app.get('/api/notes', (req, res) => {
-    const files = fs.readFileSync(db, 'utf8');
-    res.json(JSON.parse(file));
+    try {
+        dataNotes = fs.readFileSync('Develop/db/db.json', 'utf8');
+        // console.log('works???');
+        dataNotes = JSON.parse(dataNotes);
+    } catch (err) {
+        console.log("\n error (in app.get.catch):");
+        console.log(err);
+    }
 });
 
 // POST
