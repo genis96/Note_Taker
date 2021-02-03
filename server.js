@@ -31,8 +31,10 @@ app.post('/api/notes', (req, res) => {
         dataNotes = JSON.stringify(dataNotes);
 
         fs.writeFile('./Develop/db/db.json', dataNotes, 'utf8', (err) => {
-            if(err)
-        })
+            if(err) throw err;
+        });
+
+        res.json(JSON.parse(dataNotes));
 
     } catch (err) {
         throw err;
