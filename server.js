@@ -24,6 +24,10 @@ app.post('/api/notes', (req, res) => {
     try {
         dataNotes = fs.readFileSync('./Develop/db/db.json', 'utf8') ;
         console.log(dataNotes);
+
+        dataNotes = JSON.parse(dataNotes);
+        req.body.id = dataNotes.length;
+
     } catch (err) {
         throw err;
         console.log(err);
