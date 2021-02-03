@@ -1,5 +1,6 @@
 const express = require('express');
 const fs = require('fs');
+const { get } = require('http');
 const path = require('path');
 const db = 'db/db.json';
 const app = express();
@@ -19,7 +20,11 @@ app.get('/api/notes', (req, res) => {
 });
 
 // POST
-app.post('')
+app.post('/api/notes', (req, res) => {
+    try {
+        dataNotes = fs.readFileSync('')
+    }
+})
 
 // DELETE
 app.delete('/api/notes/:id', (req, res) => {
@@ -43,4 +48,6 @@ app.delete('/api/notes/:id', (req, res) => {
   });
 
 // HTML GET ROUTES
+// app.get('/notes', (req, res) => {
 
+// })
