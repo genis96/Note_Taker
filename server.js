@@ -48,7 +48,7 @@ app.post('/api/notes', (req, res) => {
     }
 })
 
-// DELETE
+// DELETE - works
 app.delete('/api/notes/:id', (req, res) => {
     try {
         dataNotes = fs.readFileSync('/db/db.json', 'utf8');
