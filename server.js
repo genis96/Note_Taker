@@ -19,7 +19,7 @@ app.get('/api/notes', (req, res) => {
 });
 
 // POST
-
+app.post('')
 
 // DELETE
 app.delete('/api/notes/:id', (req, res) => {
