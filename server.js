@@ -65,5 +65,17 @@ app.delete('/api/notes/:id', (req, res) => {
 
 // HTML GET ROUTES
 app.get('/notes', (req, res) => {
-
-})
+    // starts on click
+    res.sendFile(path.join(__dirname, 'Develop/public/notes.html'));
+});
+app.get('/notes', (req, res) => {
+    // if no matches, default 
+    res.sendFile(path.join(__dirname, 'Develop/public/notes.html'));
+});
+app.get('/notes', (req, res) => {
+    // 
+    res.sendFile(path.join(__dirname, 'Develop/public/notes.html'));
+});
+app.get('/notes', (req, res) => {
+    res.sendFile(path.join(__dirname, 'Develop/public/notes.html'));
+});
