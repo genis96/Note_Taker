@@ -68,13 +68,13 @@ app.get('/notes', (req, res) => {
     // starts on click
     res.sendFile(path.join(__dirname, 'Develop/public/notes.html'));
 });
-app.get('/notes', (req, res) => {
+app.get('*', (req, res) => {
     // if no matches, default 
     res.sendFile(path.join(__dirname, 'Develop/public/index.html'));
 });
-app.get('/notes', (req, res) => {
+app.get('/api/notes', (req, res) => {
     // sendFile, path json
-    res.sendFile(path.join(__dirname, 'Develop/db/db.json'));
+    return res.sendFile(path.json(__dirname, 'Develop/db/db.json'));
 });
 app.listen(PORT, () => {
     console.log(`SERVER LISTEN SUCCESS ${PORT}`);
