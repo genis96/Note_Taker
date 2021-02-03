@@ -57,7 +57,7 @@ app.delete('/api/notes/:id', (req, res) => {
             return note.id != req.params.id;
         });
         dataNotes = JSON.stringify(dataNotes);
-      fs.writeFile('/db/db.json', dataNotes, 'utf8', (err) => {
+      fs.writeFile('./db/db.json', dataNotes, 'utf8', (err) => {
         if (err) throw err;
       });
 
