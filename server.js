@@ -26,7 +26,10 @@ app.delete('/api/notes/:id', (req, res) => {
     fs.readFile(db, 'utf-8', (err, data) => {
         if(err) throw err;
         let id = req.params.id;
-    })
+        let deleteNote = 
+    });
+    fs.writeFileSync(db, JSON.stringify(updateNotes));
+    res.json(deleteNote);
 })
 
 
