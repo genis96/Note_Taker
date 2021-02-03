@@ -64,6 +64,6 @@ app.delete('/api/notes/:id', (req, res) => {
   });
 
 // HTML GET ROUTES
-// app.get('/notes', (req, res) => {
+app.get('/notes', (req, res) => {
 
-// })
+})
