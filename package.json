@@ -9,6 +9,16 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "express": "^4.16.4"
-  }
+    "express": "^4.17.1",
+    "inquirer": "^7.3.3"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/genis96/Note_Taker.git"
+  },
+  "keywords": [],
+  "bugs": {
+    "url": "https://github.com/genis96/Note_Taker/issues"
+  },
+  "homepage": "https://github.com/genis96/Note_Taker#readme"
 }
