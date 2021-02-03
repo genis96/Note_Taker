@@ -70,13 +70,12 @@ app.get('/notes', (req, res) => {
 });
 app.get('/notes', (req, res) => {
     // if no matches, default 
-    res.sendFile(path.join(__dirname, 'Develop/public/notes.html'));
+    res.sendFile(path.join(__dirname, 'Develop/public/index.html'));
 });
 app.get('/notes', (req, res) => {
     // sendFile, path json
-    res.sendFile(path.join(__dirname, 'Develop/public/notes.html'));
+    res.sendFile(path.join(__dirname, 'Develop/db/db.json'));
 });
-app.get('/notes', (req, res) => {
-    // listen to PORT
-    res.sendFile(path.join(__dirname, 'Develop/public/notes.html'));
-});
+app.listen(PORT, () => {
+    console.log(`SERVER LISTEN SUCCESS ${PORT}`);
+})
