@@ -28,7 +28,11 @@ app.post('/api/notes', (req, res) => {
         dataNotes = JSON.parse(dataNotes);
         req.body.id = dataNotes.length;
         dataNotes.push(req.body); //pushing user input
+        dataNotes = JSON.stringify(dataNotes);
 
+        fs.writeFile('./Develop/db/db.json', dataNotes, 'utf8', (err) => {
+            if(err)
+        })
 
     } catch (err) {
         throw err;
