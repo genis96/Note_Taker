@@ -20,7 +20,7 @@ app.get('/api/notes', (req, res) => {
         // console.log('works???');
         dataNotes = JSON.parse(dataNotes);
     } catch (err) {
-        console.log("\n error (in app.get.catch):");
+        console.log('\n error (in app.get.catch):');
         console.log(err);
     }
 });
@@ -28,7 +28,7 @@ app.get('/api/notes', (req, res) => {
 // POST
 app.post('/api/notes', (req, res) => {
     try {
-        dataNotes = fs.readFileSync('/db/db.json', 'utf8') ;
+        dataNotes = fs.readFile('/db/db.json', 'utf8') ;
         console.log(dataNotes);
 
         dataNotes = JSON.parse(dataNotes);
@@ -36,7 +36,7 @@ app.post('/api/notes', (req, res) => {
         dataNotes.push(req.body); //pushing user input
         dataNotes = JSON.stringify(dataNotes);
 
-        fs.writeFile('/db/db.json', dataNotes, 'utf8', (err) => {
+        fs.writeFileSync('/db/db.json', dataNotes, 'utf8', (err) => {
             if(err) throw err;
         });
 
@@ -75,13 +75,13 @@ app.get('/notes', (req, res) => {
     res.sendFile(path.join(__dirname, '/public/notes.html'));
 });
 app.get('*', (req, res) => {
-    // if no matches, default 
+    // if no matches, default home
     res.sendFile(path.join(__dirname, '/public/index.html'));
 });
-app.get('/api/notes', (req, res) => {
-    // sendFile, path json
-    return res.sendFile(path.json(__dirname, '/db/db.json'));
-});
+// app.get('/api/notes', (req, res) => {
+//     // sendFile, path json
+//     return res.sendFile(path.json(__dirname, '/db/db.json'));
+// });
 app.listen(PORT, () => {
     console.log(`SERVER LISTEN SUCCESS ${PORT}`);
 })
