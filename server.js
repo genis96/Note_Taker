@@ -23,15 +23,24 @@ app.get('/api/notes', (req, res) => {
 
 // DELETE
 app.delete('/api/notes/:id', (req, res) => {
-    fs.readFile(db, 'utf-8', (err, data) => {
-        if(err) throw err;
-        let id = req.params.id;
-        let deleteNote = 
-    });
-    fs.writeFileSync(db, JSON.stringify(updateNotes));
-    res.json(deleteNote);
-})
+    try {
+        dataNotes = fs.readFileSync('./Develop/db/db.json', 'utf8');
+        dataNotes = JSON.parse(dataNotes);
+        dataNotes = dataNotes.filter((note) => {
+            return note.id = req.params.id;
+        });
+        dataNotes = JSON.stringify(dataNotes);
+      fs.writeFile('./Develop/db/db.json', dataNotes, 'utf8', (err) => {
+        if (err) throw err;
+      });
 
+      res.send(JSON.parse(dataNotes));
+
+    } catch (err) {
+      throw err;
+      console.log(err);
+    }
+  });
 
 // HTML GET ROUTES
 
