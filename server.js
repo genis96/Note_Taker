@@ -73,9 +73,10 @@ app.get('/notes', (req, res) => {
     res.sendFile(path.join(__dirname, 'Develop/public/notes.html'));
 });
 app.get('/notes', (req, res) => {
-    // 
+    // sendFile, path json
     res.sendFile(path.join(__dirname, 'Develop/public/notes.html'));
 });
 app.get('/notes', (req, res) => {
+    // listen to PORT
     res.sendFile(path.join(__dirname, 'Develop/public/notes.html'));
 });
